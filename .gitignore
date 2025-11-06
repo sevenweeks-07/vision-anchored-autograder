@@ -1,0 +1,21 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env
+.env
+
+# Outputs and artifacts
+outputs/
+chatgpt_prompt.txt
+ocr_data.json
+image_info.json
+corrections.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.bak

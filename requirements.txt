@@ -1,0 +1,8 @@
+﻿# Core
+google-cloud-vision>=3.7.4
+pillow>=10.0.0
+openai>=1.51.0
+python-dotenv>=1.0.1
+
+# Optional (only if you plan to tweak or plot)
+# matplotlib
