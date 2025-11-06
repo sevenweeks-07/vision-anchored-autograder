@@ -48,26 +48,33 @@ python run_pipeline.py --image OCR_exam/comprehension1.jpg \
 
 These examples are included in the repo and demonstrate the outputs:
 
+- `visualized_boxes.jpg` — OCR regions preview  
+- `corrected_overlay.png` — on-image corrections  
+- `corrected_overlay_complete.png` — overlay with assessment panel
+
 <table>
   <tr>
     <td align="center">
+      <a href="visualized_boxes.jpg">
         <img src="visualized_boxes.jpg" width="280" alt="OCR regions preview">
       </a><br>
-      <sub><b>OCR Regions Preview</b><br><code>visualized_boxes.jpg</code></sub>
+      <sub><b>OCR Regions Preview</b>
     </td>
     <td align="center">
+      <a href="corrected_overlay.png">
         <img src="corrected_overlay.png" width="280" alt="On-image corrections">
       </a><br>
-      <sub><b>On-Image Corrections</b><br><code>corrected_overlay.png</code></sub>
+      <sub><b>On-Image Corrections</b>
     </td>
     <td align="center">
+      <a href="corrected_overlay_complete.png">
         <img src="corrected_overlay_complete.png" width="280" alt="Overlay with assessment panel">
       </a><br>
-      <sub><b>Overlay + Panel</b><br><code>corrected_overlay_complete.png</code></sub>
+      <sub><b>Overlay + Panel</b>
     </td>
   </tr>
 </table>
-s
+
 
 ## Notes
 - Model: Use a vision-capable model (e.g., `gpt-4o`, `o4`) so the image is considered along with the prompt.
