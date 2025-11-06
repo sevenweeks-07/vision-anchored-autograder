@@ -45,27 +45,36 @@ python run_pipeline.py --image OCR_exam/comprehension1.jpg \
   --use-corrections corrections.json --skip-openai
 ```
 ## Example Images
-These examples are in this repo and demonstrate the outputs:
-- `visualized_boxes.jpg`
-- `corrected_overlay.png`
-- `corrected_overlay_complete.png`
 
-<img src="visualized_boxes.jpg" width="600" />
+These examples are included in the repo and demonstrate the outputs:
 
-<img src="corrected_overlay.png" width="600" />
+- `visualized_boxes.jpg` — OCR regions preview  
+- `corrected_overlay.png` — on-image corrections  
+- `corrected_overlay_complete.png` — overlay with assessment panel
 
-<img src="corrected_overlay_complete.png" width="600" />
+<table>
+  <tr>
+    <td align="center">
+      <a href="visualized_boxes.jpg">
+        <img src="visualized_boxes.jpg" width="280" alt="OCR regions preview">
+      </a><br>
+      <sub><b>OCR Regions Preview</b><br><code>visualized_boxes.jpg</code></sub>
+    </td>
+    <td align="center">
+      <a href="corrected_overlay.png">
+        <img src="corrected_overlay.png" width="280" alt="On-image corrections">
+      </a><br>
+      <sub><b>On-Image Corrections</b><br><code>corrected_overlay.png</code></sub>
+    </td>
+    <td align="center">
+      <a href="corrected_overlay_complete.png">
+        <img src="corrected_overlay_complete.png" width="280" alt="Overlay with assessment panel">
+      </a><br>
+      <sub><b>Overlay + Panel</b><br><code>corrected_overlay_complete.png</code></sub>
+    </td>
+  </tr>
+</table>
 
-## Project Structure
-- `run_pipeline.py` — End‑to‑end pipeline (OCR → prompt → OpenAI → overlay)
-- `extract_text_positions.py` — OCR, grouping, visualization, prompt
-- `gpt_corrections.py` — Calls OpenAI Responses API (sends image + prompt)
-- `create_overlay.py` — Renders correction overlay and assessment panel
-- `config.py` — Loads `.env`, clients for OpenAI & Vision
-- `OCR_exam/` — Sample images
-- `requirements.txt` — Python dependencies
-- `.env.example` — Template for environment variables
-- `.gitignore` — Ignores outputs and secrets
 
 ## Notes
 - Model: Use a vision-capable model (e.g., `gpt-4o`, `o4`) so the image is considered along with the prompt.
