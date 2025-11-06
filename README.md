@@ -1,22 +1,13 @@
-# OCR + GPT Vision Pipeline
+﻿# Vision Anchored Autograder
 
 Extracts text and bounding boxes with Google Vision, builds a grading/evaluation prompt, sends the prompt + image to OpenAI (vision model), and renders a correction overlay.
 
-## Table of Contents
-- [Features](#features)
-- [Requirements](#requirements)
-- [Setup](#setup)
-- [Quickstart](#quickstart)
-- [Example Images](#example-images)
-- [Notes](#notes)
-- [Troubleshooting](#troubleshooting)
-
 ## Features
-- Google Vision OCR — grouped word boxes + labeled preview
+- Google Vision OCR → grouped word boxes + labeled preview
 - Prompt generator encodes regions, text, and coordinates
 - OpenAI (vision-capable) returns strict JSON of corrections
 - Overlay renderer draws circles/checks and adds an assessment panel
-- One-command pipeline saves all artifacts under `outputs/`
+- One‑command pipeline saves all artifacts under `outputs/`
 
 ## Requirements
 - Python 3.9+
@@ -32,37 +23,34 @@ Extracts text and bounding boxes with Google Vision, builds a grading/evaluation
    - Optional: `OPENAI_MODEL=gpt-4o` (default is a vision-capable model)
 
 ## Quickstart
-```bash
+```
 python run_pipeline.py --image OCR_exam/comprehension1.jpg
 ```
 
 Offline/Secrets-safe options:
 - Use existing OCR json (skip Google Vision):
-```bash
+```
 python run_pipeline.py --image OCR_exam/comprehension1.jpg \
   --use-ocr-json ocr_data.json --skip-ocr
 ```
 - Use existing corrections json (skip OpenAI):
-```bash
+```
 python run_pipeline.py --image OCR_exam/comprehension1.jpg \
   --use-corrections corrections.json --skip-openai
 ```
 - Both (pure offline overlay render):
-```bash
+```
 python run_pipeline.py --image OCR_exam/comprehension1.jpg \
   --use-ocr-json ocr_data.json --skip-ocr \
   --use-corrections corrections.json --skip-openai
 ```
-
----
-
 ## Example Images
 
 These examples are included in the repo and demonstrate the outputs:
 
-- `visualized_boxes.jpg` - OCR regions preview  
-- `corrected_overlay.png` - on-image corrections  
-- `corrected_overlay_complete.png` - overlay with assessment panel
+- `visualized_boxes.jpg` — OCR regions preview  
+- `corrected_overlay.png` — on-image corrections  
+- `corrected_overlay_complete.png` — overlay with assessment panel
 
 <table>
   <tr>
@@ -85,17 +73,13 @@ These examples are included in the repo and demonstrate the outputs:
       <sub><b>Overlay + Panel</b>
     </td>
   </tr>
-  </table>
+</table>
 
-
----
 
 ## Notes
 - Model: Use a vision-capable model (e.g., `gpt-4o`, `o4`) so the image is considered along with the prompt.
 - Security: `.env` is git-ignored; do not commit keys. If any key previously appeared in code, rotate it.
 - Reproducibility: All generated artifacts are placed in `outputs/` to keep the repo clean.
-
----
 
 ## Troubleshooting
 - Vision auth errors: ensure billing is enabled and `GOOGLE_VISION_API_KEY` is valid.
