@@ -1,4 +1,4 @@
-﻿# Vision Anchored Autograder
+﻿# 🔎Vision Anchored Autograder
 
 Extracts text and bounding boxes with Google Vision, builds a grading/evaluation prompt, sends the prompt + image to OpenAI (vision model), and renders a correction overlay.
 
